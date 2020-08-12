@@ -11,6 +11,8 @@ class CicloviaListAdapter(var lista:ArrayList<Ciclovia>):RecyclerView.Adapter<Ci
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         var view:View = LayoutInflater.from(parent.context).inflate(R.layout.lista, parent, false)
         var holder:Holder = Holder(view)
+        holder.texto1 = view.findViewById(R.id.texto1)
+        holder.texto2 = view.findViewById(R.id.texto2)
         return holder
     }
 
@@ -24,7 +26,7 @@ class CicloviaListAdapter(var lista:ArrayList<Ciclovia>):RecyclerView.Adapter<Ci
     }
 
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var texto1:TextView = itemView.findViewById(R.id.texto1)
-        var texto2:TextView = itemView.findViewById(R.id.texto2)
+        lateinit var texto1:TextView
+        lateinit var texto2:TextView
     }
 }
