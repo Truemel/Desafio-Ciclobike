@@ -23,10 +23,13 @@ class MainActivity : AppCompatActivity() {
             var lista:ArrayList<Ciclovia> = ArrayList<Ciclovia>()
             var listaT:ArrayList<Ciclovia> = SetupCiclovias().init()
             var i:Int = 0
-            while(i < listaT.size)
-                when(listaT.get(i).comuna.contentEquals("Las Condes")){
+            while(i < listaT.size) {
+                when (listaT.get(i).comuna.contentEquals("Las Condes")) {
                     false -> lista.add(listaT.get(i))
                 }
+                i++
+            }
+
             reList.adapter = CicloviaListAdapter(lista)
         })
         noFilt = findViewById(R.id.noFilt)
